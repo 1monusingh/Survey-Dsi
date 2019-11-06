@@ -36,7 +36,9 @@ app.use(cookiiParser());
 app.use('/teacher',teacherRoute);
 app.use('/student',studentRoute);
 
-
+app.get('',function(req,res){
+    res.redirect('/teacher/login');
+})
 
 var port = process.env.PORT || 5000;
 
