@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light  " style="background-color: #e3f2fd;">
+        <a class="navbar-brand" href="#">Survey</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/student/login">Student Login <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/teacher/login">Teacher Login <span class="sr-only">(current)</span></a>
+                </li>
+
+
+                <!-- <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                  </form> -->
+        </div>
+    </nav>
+    <h1>Teacher Register</h1>
+    <form method="POST" action="register">
+            <div class="form-group">
+                    <label for="exampleFormControlInput1">Name</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" name='name' placeholder="Name">
+                </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Email address</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" name= 'email' placeholder="name@example.com">
+        </div>
+        <div class="form-group">
+                <label for="exampleFormControlInput1">Password</label>
+                <input type="password" class="form-control" id="exampleFormControlInput1" name='password' placeholder="Password">
+            </div>
+            <div class="form-group">
+                    <label for="exampleFormControlInput1">Confirm Password</label>
+                    <input type="password" class="form-control" id="exampleFormControlInput1" name='confirmPassword' placeholder="Confirm Password">
+                </div>
+
+
+         <button type="submit"  class="btn btn-primary mb-2">Register</button>
+    </form>
+</body>
+
+</html>
