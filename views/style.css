@@ -1,0 +1,11 @@
+
+
+#king{
+    justify-content: center;
+    align-content: center;
+    width:100%;
+}
+#inner{
+    margin: auto;
+    width: 60%;
+}

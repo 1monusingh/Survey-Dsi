@@ -4,10 +4,12 @@ const Schema = mongoose.Schema;
 
 const questionSchema = new Schema({
       
-      question:{type:String,required},
-      options:[{type:String}],
-      correct:{type:String}
-      
+      question:{type:String},
+      a1:{type:String},
+      a2:{type:String},
+      a3:{type:String},
+      a4:{type:String},
+ 
       }     
 
 );

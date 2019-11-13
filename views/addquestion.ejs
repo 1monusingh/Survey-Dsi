@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>New</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+        <nav class="navbar navbar-expand-lg navbar-light  " style="background-color: #e3f2fd;">
+                <a class="navbar-brand" href="/teacher">Survey</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+        
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto"> 
+                        
+                            <li class="nav-item ">
+
+                                  <a href="/teacher/logout">  <button type="submit"  class="btn btn-danger mb-1">Logout</button></a>
+                                </li>
+                               
+        
+        
+                        <!-- <form class="form-inline my-2 my-lg-0"> 
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                          </form> -->
+                </div>
+            </nav>
+            
+            <form method="POST" action="addquestion">
+                    <div class="form-group" style="padding-left: 50px; padding-right: 50px;">
+                            <label for="exampleFormControlInput1"><%= name %> :  Question <%=  count %></label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1" name='question' placeholder="Question Goes here">
+                        </div>
+                <div class="form-group"  style="padding-left: 50px; padding-right: 50px;" >
+                    <label for="exampleFormControlInput1">Answer 1</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" name= 'a1' placeholder="Answer 1">
+                </div>
+                <div class="form-group"  style="padding-left: 50px; padding-right: 50px;" >
+                        <label for="exampleFormControlInput1">Answer 2</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput1" name= 'a2' placeholder="Answer 2">
+                    </div>
+                    <div class="form-group"  style="padding-left: 50px; padding-right: 50px;" >
+                            <label for="exampleFormControlInput1">Answer 3</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1" name= 'a3' placeholder="Answer 3">
+                        </div>
+                        <div class="form-group"  style="padding-left: 50px; padding-right: 50px;" >
+                                <label for="exampleFormControlInput1">Answer 4</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput1" name= 'a4' placeholder="Answer 4">
+                            </div>
+                           
+                        <input type="hidden" name="id" value="<%=id%>">
+                        <input type="hidden" name="name" value="<%=name%>">
+                        <input type="hidden" name="count" value="<%=count%>">
+                            
+                 <button type="submit"  class="btn btn-primary mb-2 center"> Add </button>
+                
+            </form>
+             <form method="POST" action="viewsurvey">
+                 <input type="hidden" name="surveyid" value="<%=id %>" >
+                 
+                 <button type="submit"  class="btn btn-success mb-2 center"> View All  </button>
+             </form>
+    
+</body>
+</html>

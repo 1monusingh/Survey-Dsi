@@ -4,9 +4,9 @@ const Schema = mongoose.Schema;
 
 const surveySchema = new Schema({
       
-      surveyname:{type:String,required:true,},
+      name:{type:String,required:true,},
       questions:[{type:Schema.Types.ObjectId,ref:'Question'}],
-      section:{type:String},
+      sec:{type:String},
       sem:{type:Number}
       }
 );
