@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const teacherSchema = new Schema({
+const studentSchema = new Schema({
       
       name:{type:String,required:true,max:[30,"Name too long"]},
       email:{type:String,required:true,max:[30,"Email too long"] },
@@ -15,4 +15,4 @@ const teacherSchema = new Schema({
 
  
 
-module.exports = mongoose.model('Student',teacherSchema);
+module.exports = mongoose.model('Student',studentSchema);
