@@ -36,17 +36,18 @@
     </nav>
     <br>
    <h1>Student Login</h1>
-    <form class="form-inline">
-        <label class="sr-only" for="inlineFormInputName2">Name</label>
-        <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Email">
+   <form class="form-inline" method="POST" action='/student/login'>
+       
 
-        <label class="sr-only" for="inlineFormInputGroupUsername2">Username</label>
-        <div class="input-group mb-2 mr-sm-2">
-            <div class="input-group-prepend">
-                <div class="input-group-text">@</div>
-            </div>
-            <input type="password" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Password">
+    <label class="sr-only" for="inlineFormInputGroupUsername2">Username</label>
+    <div class="input-group mb-2 mr-sm-2">
+        <div class="input-group-prepend">
+            <div class="input-group-text">@</div>
         </div>
+        <input type="text" class="form-control" id="inlineFormInputGroupUsername2" name="email" placeholder="Email">
+    </div>
+    <label class="sr-only" for="inlineFormInputName2">Name</label>
+    <input type="password" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" name ="password" placeholder="Password">
 
         <div class="form-check mb-2 mr-sm-2">
             <input class="form-check-input" type="checkbox" id="inlineFormCheck">

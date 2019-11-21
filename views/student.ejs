@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home</title>
+    <title>Student</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
         <nav class="navbar navbar-expand-lg navbar-light  " style="background-color: #e3f2fd;">
@@ -22,7 +21,7 @@
                         
                             <li class="nav-item ">
 
-                                  <a href="/teacher/logout">  <button type="submit"  class="btn btn-danger mb-1">Logout</button></a>
+                                  <a href="/student/logout">  <button type="submit"  class="btn btn-danger mb-1">Logout</button></a>
                                 </li>
                                
         
@@ -33,25 +32,19 @@
                           </form> -->
                 </div>
             </nav>
-    Welcome <%= name %>
+            Welcome ,<%= name %>
 
-    <div id="king" class="container">
-        <div id="inner">
-            <a href="/teacher/create"><button  class="btn btn-success mb-1" >Create New Survey</button></a>
-            <!-- <a href="/teacher/create"><button  class="btn btn-success mb-1" >C Survey</button></a> -->
-        </div>
-    </div>
-      <div class="container">
-        <% let count = 0 ; survey.forEach( function(que) {  count = count+1;%>
-            <div id="inner">
-                <form method="GET" action="teacher/viewsurvey">
-                <input type="hidden" value="<%=que.id%>"Name="surveyid" >
-
-                 <h4>  <%= count %> ) <u> <%= que.sem %> <%= que.sec %></u> :  <%= que.name %> <button  type="submit" class="btn btn-primary mb-1" >View</button></h4></a>
-            </form>
-            </div>
-            <% })%>
-      </div>
-    
+            <div class="container">
+                    <% let count = 0 ; surveys.forEach( function(que) {  count = count+1;%>
+                        <div id="inner">
+                            <form method="GET" action="student/viewsurvey">
+                            <input type="hidden" value="<%=que.id%>"Name="surveyid" >
+            
+                             <h4> <%= count %>) <%= que.name %> <button  type="submit" class="btn btn-primary mb-1" >View</button></h4></a>
+                        </form>
+                        </div>
+                        <% })%>
+                  </div>
+ 
 </body>
 </html>

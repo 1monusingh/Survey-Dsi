@@ -7,7 +7,7 @@ const studentSchema = new Schema({
       name:{type:String,required:true,max:[30,"Name too long"]},
       email:{type:String,required:true,max:[30,"Email too long"] },
       password:{type:String,required:true},
-      section:{type:String},
+      sec:{type:String},
       sem:{type:Number}
       }     
 

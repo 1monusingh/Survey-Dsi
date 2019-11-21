@@ -11,12 +11,11 @@ const router = express.Router();
 router.get('/register',studentController.registerpage);
 router.post('/register',studentController.register);
 router.get('/login',studentController.loginpage);
-router.post('/login',studentController.register);
-// router.post('/login',authController.auth);
-// router.post('/token',authController.getToken);
-// router.post('/profile',authController.getProfile);
-// router.post('/otherprofile',authController.getOtherProfile);
-// router.post('/profile/update',authController.updateProfile);
+router.post('/login',studentController.login);
+router.get('/logout',studentController.logmeout);
+router.get('/viewsurvey',studentController.viewsurvey);
+router.post('/submit',studentController.submitsurvey);
+router.get('/',studentController.getHome);
 
 
 module.exports = router;
