@@ -35,12 +35,23 @@
             </nav>
     Welcome <%= name %>
 
-    <div id="king">
+    <div id="king" class="container">
         <div id="inner">
             <a href="/teacher/create"><button  class="btn btn-success mb-1" >Create New Survey</button></a>
             <!-- <a href="/teacher/create"><button  class="btn btn-success mb-1" >C Survey</button></a> -->
         </div>
     </div>
+      <div class="container">
+        <% let count = 0 ; survey.forEach( function(que) {  count = count+1;%>
+            <div id="inner">
+                <form method="GET" action="teacher/viewsurvey">
+                <input type="hidden" value="<%=que.id%>"Name="surveyid" >
+
+                 <h4>  <%= count %> ) <u> <%= que.sem %> <%= que.sec %></u> :  <%= que.name %> <button  type="submit" class="btn btn-primary mb-1" >View</button></h4></a>
+            </form>
+            </div>
+            <% })%>
+      </div>
     
 </body>
 </html>

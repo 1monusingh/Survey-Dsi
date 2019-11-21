@@ -1,6 +1,8 @@
 
 const Teacher = require('../models/teacher');
 
+const Survey = require('../models/survey');
+
 module.exports.registerpage = function (req, res) {
     //  res.send("aesrdg");
     console.log('teacher-route');
@@ -73,11 +75,21 @@ module.exports.gethome = function (req, res) {
 
     console.log(req.cookies);
     var stored = req.cookies.teacher;
+    
+     Survey.find({teacheremail:stored.email},function(err,foundSurveys){
+          if(err){
+             res.send("Please try again") ;
+          }
+        //    console.log(foundSurveys);
+           res.render('teacher', {
+            name: stored.name,
+            survey:foundSurveys
+        });
+       
+     })
 
-    res.render('teacher', {
-        name: stored.name
-    });
 
+  
 
 }
 module.exports.logmeout = function(req,res){

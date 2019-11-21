@@ -7,7 +7,8 @@ const surveySchema = new Schema({
       name:{type:String,required:true,},
       questions:[{type:Schema.Types.ObjectId,ref:'Question'}],
       sec:{type:String},
-      sem:{type:Number}
+      sem:{type:Number},
+      teacheremail:{type:String}
       }
 );
 
