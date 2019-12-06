@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>New</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+        <nav class="navbar navbar-expand-lg navbar-light  " style="background-color: #e3f2fd;">
+                <a class="navbar-brand" href="/teacher">Survey</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+        
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto"> 
+                        
+                            <li class="nav-item ">
+
+                                  <a href="/teacher/logout">  <button type="submit"  class="btn btn-danger mb-1">Logout</button></a>
+                                </li>
+                        
+                </div>
+            </nav>
+            
+           <div class="container">
+                
+           </div>
+             
+            <div id="king">
+                <div id="inner">
+                 <h3>  Survey : <%=surveyname%></h3>
+                
+                </div>
+                <br>
+                <% let count = 0 ; questionlist.forEach( function(que) {  count = count+1;%>
+                <div id="inner">
+                  
+         
+                         <h4 style="background-color: #aaa;" >   Question : <%= count %>  <%= que.question %></h4>
+                         <h4  style="color: darkcyan;">  <%= que.a1 %>  ------------------ <%= resultset[count-1]%10  %></h4>
+                         <h4 style="color: darkcyan;" >  <%= que.a2 %> ------------------<%= ((resultset[count-1]/10)%10).toFixed(0)  %> </h4>
+                         <h4 style="color: darkcyan;" >  <%= que.a3 %>------------------<%= ((resultset[count-1]/100)%10).toFixed(0)  %> </h4>
+                         <h4 style="color: darkcyan;">  <%= que.a4 %>------------------<%= (resultset[count-1]/1000).toFixed(0)  %> </h4>
+
+
+
+                </div>
+                <% })%>
+            </div>
+    
+</body>
+</html>

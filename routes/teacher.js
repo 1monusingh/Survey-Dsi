@@ -20,6 +20,7 @@ router.post('/addquestion',surveyController.addquestion);
 router.get('/viewsurvey',surveyController.viewsurvey);    
 router.post('/morequestions',surveyController.morequestions);    
 router.post('/deletequestion',surveyController.deletequestion); 
+router.get('/viewresult',surveyController.viewresult); 
 router.get('/',techerController.gethome);
 
 

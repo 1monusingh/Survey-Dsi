@@ -47,8 +47,9 @@
                 <form method="GET" action="teacher/viewsurvey">
                 <input type="hidden" value="<%=que.id%>"Name="surveyid" >
 
-                 <h4>  <%= count %> ) <u> <%= que.sem %> <%= que.sec %></u> :  <%= que.name %> <button  type="submit" class="btn btn-primary mb-1" >View</button></h4></a>
+                 <h4>  <%= count %> ) <u> <%= que.sem %> <%= que.sec %></u> :  <%= que.name %> <button  type="submit" class="btn btn-primary mb-1" >View</button></h4>
             </form>
+          <a href="/teacher/viewresult?surveyid=<%=que.id%>">  <button  class="btn btn-danger mb-1" >Result</button></a>
             </div>
             <% })%>
       </div>

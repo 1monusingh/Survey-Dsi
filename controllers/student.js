@@ -1,6 +1,7 @@
 const Student = require('../models/student');
 const Survey = require('../models/survey');
 const Question = require('../models/questions');
+const Result = require('../models/result');
 
 module.exports.registerpage = function(req,res){
     //  res.send("aesrdg");
@@ -26,7 +27,7 @@ module.exports.register = function(req,res){
             sec
         }
     );
-    console.log(newStudent);
+    // console.log(newStudent);
     // console.log(newTeach);
     newStudent.save(function (err) {
         if (err) {
@@ -36,14 +37,14 @@ module.exports.register = function(req,res){
         console.log("success");
     });
 
-    console.log(name);
+    // console.log(name);
     return res.redirect('/student/login');
 }
 
 
 module.exports.login = function(req,res){
     var { email, password } = req.body;
-    console.log(req.body)
+    // console.log(req.body)
     if (!email || !password) {
         return res.redirect('/student/login')
     }
@@ -53,7 +54,7 @@ module.exports.login = function(req,res){
             return res.redirect('/student/login');
         }
         if (foundUser.password == password) {
-            console.log(foundUser);
+            // console.log(foundUser);
             res.cookie("student", foundUser);
             return res.redirect('/student');
         }else{
@@ -125,6 +126,29 @@ module.exports.viewsurvey = function(req,res){
 }
 
 module.exports.submitsurvey = function(req,res){
+ 
+      var {surveyid,count} = req.body;
+      var answers = [];
+      var temp;
+      const values = Object.values(req.body);
+    //   console.log(values);
+      for(i=1;i<=count;++i){
+        temp = values[i];
+        answers.push(temp);
+       
+      }
+         
+    var newresult = new Result({
+        surveyid,
+        answers
+    });  
+    // console.log(newresult);
 
-    res.send(req.body.optradio);
+    newresult.save();
+
+    return res.redirect('/student');
+    //    console.log(answers);
+
+    //   console.log(count);
+    
 }

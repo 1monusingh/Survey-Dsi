@@ -5,7 +5,7 @@ const Survey = require('../models/survey');
 
 module.exports.registerpage = function (req, res) {
     //  res.send("aesrdg");
-    console.log('teacher-route');
+    // console.log('teacher-route');
     res.render('teacher-register');
 }
 
@@ -18,7 +18,7 @@ module.exports.loginpage = function (req, res) {
 
 module.exports.register = function (req, res) {
     const { name, email, password, confirmPassword } = req.body;
-    console.log(req.body);
+    // console.log(req.body)
     if (password != confirmPassword) {
         res.redirect('/teacher/register');
     }
@@ -35,10 +35,10 @@ module.exports.register = function (req, res) {
             return res.send('its an error');
 
         }
-        console.log("success");
+        // console.log("success");
     });
 
-    console.log(name);
+    // console.log(name);
     return res.redirect('/teacher/login');
 }
 
@@ -56,7 +56,7 @@ module.exports.login = function (req, res) {
             return res.redirect('/teacher/login');
         }
         if (foundUser.password == password) {
-            console.log(foundUser);
+            // console.log(foundUser);
             res.cookie("teacher", foundUser);
             return res.redirect('/teacher');
         }else{
@@ -65,7 +65,7 @@ module.exports.login = function (req, res) {
 
     });
 
-    console.log(email + " :  " + password);
+    // console.log(email + " :  " + password);
 
     //   
 }

@@ -13,7 +13,7 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light  " style="background-color: #e3f2fd;">
-        <a class="navbar-brand" href="/teacher">Home</a>
+        <a class="navbar-brand" href="/student">Home</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -38,39 +38,28 @@
 
         <br>
         <form action="/student/submit" method="POST" >
+            <input type="hidden" value="<%=surveyid%>" name ="surveyid">
         <% let count = 0 ; questionlist.forEach( function(que) {  count = count+1;%>
      
 
             
                 <h4 style="display: inline;"> Question <%= count %> :  <%= que.question %></h4>
 
-                <div class="radio">
-                    <label><input type="radio" name="<%=(count*4)+1%>"><%= que.a1 %></label>
-                </div>
-                <div class="radio">
-                    <label><input type="radio"  name="<%=(count*4)+2%>" ><%= que.a2 %></label>
-                </div>
-                <div class="radio">
-                    <label><input type="radio" name="<%=(count*4)+3%>" ><%= que.a3 %></label>
-                </div>
-                <div class="radio">
-                    <label><input type="radio"  name="<%=(count*4)+4%>" ><%= que.a4 %></label>
-                </div>
+                <select name="a<%=count%>">
+                    <option value="1"><%=que.a1%></option>
+                    <option value="2"><%=que.a2%></option>
+                    <option value="3"><%=que.a3%></option>
+                    <option value="4"><%=que.a4%></option>
+                  </select>
+                  <br>
 
         <% })%>
+        <input type="hidden" value="<%=count%>" name ="count">
         <button type="submit" class="btn btn-success mb-1">Submit</button></a>
     </form>
    
     </div>
-    <script>
-    $(document).ready(function () {
-    $('input[type=radio]').change(function() {
-        // When any radio button on the page is selected,
-        // then deselect all other radio buttons.
-        $('input[type=radio]:checked').not(this).prop('checked', false);
-    });
-});​
-    </script>
+  
 
 </body>
 
